@@ -36,9 +36,7 @@ app.ws('/draw', function (ws, req) {
                     savedCoordinates.push(decodedMessage.coordinates)
                     conn.send(JSON.stringify({
                         type: 'NEW_PIXEL',
-                        message: {
-                            text: decodedMessage.coordinates
-                        }
+                        pixelCoordinates: decodedMessage.coordinates
                     }));
                 });
                 break;
